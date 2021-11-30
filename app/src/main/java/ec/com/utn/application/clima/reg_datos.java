@@ -60,6 +60,7 @@ public class reg_datos extends AppCompatActivity implements View.OnClickListener
                         Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_LONG).show();
                         Intent i2= new Intent(reg_datos.this, Inicio.class);
                         startActivity(i2);
+                        finish();
 
                     }else {
                         Toast.makeText(this, "Dato existente", Toast.LENGTH_LONG).show();
