@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".TemperaturasRegistradas_user_sensor"
+            android:exported="false" />
+        <activity
+            android:name=".TemperaturaHoraSector"
+            android:exported="false" />
+        <activity
+            android:name=".TemperaturaUserSector"
+            android:exported="false" />
+        <activity
+            android:name=".TempMediaSector"
+            android:exported="false" />
+        <activity
             android:name=".reg_datos"
             android:exported="false" />
         <activity

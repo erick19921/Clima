@@ -36,7 +36,7 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
      switch (v.getId()){
-       case R.id.btnRegistrarR:
+        case R.id.btnRegistrarR:
         Usuario u= new Usuario();
         u.setUsuario(us.getText().toString());
         u.setClave(pas.getText().toString());
@@ -54,7 +54,8 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
             Toast.makeText(this, "Usuario existente", Toast.LENGTH_LONG).show();
         }
         break;
-    case R.id.btnCancelarR:
+
+        case R.id.btnCancelarR:
         Intent i= new Intent(Registrar.this, MainActivity.class);
         startActivity(i);
         finish();

@@ -1,15 +1,12 @@
 package ec.com.utn.application.clima;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Inicio extends AppCompatActivity implements View.OnClickListener {
     Button btnEditar, btnEliminar, btnMostrar, btnSalir, regDatos;
@@ -17,20 +14,22 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener {
     int id =0;
     Usuario u;
     daoUsuario dao;
+    Datos d;
+    daoDatos daod;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
         nombre=(TextView) findViewById(R.id.txtnombreinicio);
-        btnEditar=(Button) findViewById(R.id.btneditarInicio);
-        btnEliminar=(Button) findViewById(R.id.btnEliminarInicio);
+        //btnEditar=(Button) findViewById(R.id.btneditarInicio);
+       // btnEliminar=(Button) findViewById(R.id.btnEliminarInicio);
         btnMostrar=(Button) findViewById(R.id.btnMostrarInicio);
         btnSalir=(Button) findViewById(R.id.btnSalirInicio);
         regDatos=(Button) findViewById(R.id.btnRegNewD);
 
-        btnEditar.setOnClickListener(this);
-        btnEliminar.setOnClickListener(this);
+        //btnEditar.setOnClickListener(this);
+        //btnEliminar.setOnClickListener(this);
         btnMostrar.setOnClickListener(this);
         btnSalir.setOnClickListener(this);
         regDatos.setOnClickListener(this);
@@ -47,7 +46,7 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btneditarInicio:
+           /* case R.id.btneditarInicio:
                 Intent e = new Intent(Inicio.this, Editar.class);
                 e.putExtra("id",id);
                 startActivity(e);
@@ -79,7 +78,7 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener {
                     }
                 });
                 b.show();
-                break;
+                break;*/
             case R.id.btnMostrarInicio:
                 Intent m = new Intent(Inicio.this, Mostrar.class);
                 startActivity(m);
@@ -87,14 +86,32 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.btnSalirInicio:
                 Intent i = new Intent(Inicio.this, MainActivity.class);
+                i.putExtra("id",id);
                 startActivity(i);
                 finish();
                 break;
 
             case R.id.btnRegNewD:
                 Intent d = new Intent(Inicio.this, reg_datos.class);
+                d.putExtra("id", d.getExtras());
                 startActivity(d);
+                break;
+            case R.id.btnTempUserSensor:
+                Intent e = new Intent(Inicio.this, TemperaturasRegistradas_user_sensor.class);
+                startActivity(e);
+                break;
+            case R.id.btnTempMediaSector:
+                Intent g = new Intent(Inicio.this, TempMediaSector.class);
+                startActivity(g);
+                break;
+            case R.id.btnTempUsSecSensor:
+                Intent h = new Intent(Inicio.this, TemperaturaUserSector.class);
+                startActivity(h);
+                break;
 
+            case R.id.btnTempInterHorasSec:
+                Intent k = new Intent(Inicio.this, TemperaturaUserSector.class);
+                startActivity(k);
                 break;
         }
     }
